@@ -9,6 +9,7 @@ public class CommandService {
 
 
             List<User> users = userService.findAll();
+            System.out.println(users.get(0).getId());
             System.out.println(users.get(0).getUsername());
             System.out.println(users.get(0).getFirstName());
             System.out.println(users.get(0).getLastName());
@@ -16,8 +17,5 @@ public class CommandService {
             System.out.println(users.get(0).getGroup());
 return users;
         }
-
-
-
 
 }
