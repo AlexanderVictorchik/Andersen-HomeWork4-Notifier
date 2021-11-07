@@ -1,11 +1,14 @@
-import command.CommandService;
-
-import java.util.List;
-
 public class Notifier {
 
     public static void main(String[] args) {
-   CommandService.getAll();
+
+
+        // TODO: 07.11.2021 uncomment for test
+        //CommandService.getAll();
+        //CommandService.getByGroup("green");
+        //CommandService.getByRole("admin");
+        //CommandService.getByRoleAndGroup("user", "green");
+
 
     }
 }
