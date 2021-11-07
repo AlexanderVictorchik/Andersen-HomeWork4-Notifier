@@ -1,5 +1,6 @@
 package command;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CommandService {
@@ -10,65 +11,113 @@ public class CommandService {
         return userService;
     }
 
-    public static List<User> getAll() {
+
+    public static List<String> getAllUsers() {
         List<User> users = getService().findAll();
+        List<String> stringUsers = new ArrayList<>();
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
+            stringUsers.add(
+                    u.getId() + "|"
+                            + u.getUsername() + "|"
+                            + u.getFirstName() + "|"
+                            + u.getLastName() + "|"
+                            + u.getRole() + "|"
                             + u.getGroup()
             );
         }
-        return users;
+
+        return stringUsers;
     }
 
 
-    public static List<User> getByGroup(String group) {
+    public static List<String> getUsersByGroup(String group) {
         List<User> users = getService().findByGroup(group);
+        List<String> stringUsers = new ArrayList<>();
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
+            stringUsers.add(
+                    u.getId() + "|"
+                            + u.getUsername() + "|"
+                            + u.getFirstName() + "|"
+                            + u.getLastName() + "|"
+                            + u.getRole() + "|"
                             + u.getGroup()
             );
         }
-        return users;
+
+        return stringUsers;
     }
 
-    public static List<User> getByRole(String role) {
+    public static List<String> getUsersByRole(String role) {
         List<User> users = getService().findByRole(role);
+        List<String> stringUsers = new ArrayList<>();
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
+            stringUsers.add(
+                    u.getId() + "|"
+                            + u.getUsername() + "|"
+                            + u.getFirstName() + "|"
+                            + u.getLastName() + "|"
+                            + u.getRole() + "|"
                             + u.getGroup()
             );
         }
-        return users;
+
+        return stringUsers;
     }
 
-    public static List<User> getByRoleAndGroup(String role, String group) {
+    public static List<String> getUsersByRoleAndGroup(String role, String group) {
         List<User> users = getService().findByRoleAndGroup(role, group);
+        List<String> stringUsers = new ArrayList<>();
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
+            stringUsers.add(
+                    u.getId() + "|"
+                            + u.getUsername() + "|"
+                            + u.getFirstName() + "|"
+                            + u.getLastName() + "|"
+                            + u.getRole() + "|"
                             + u.getGroup()
             );
         }
-        return users;
+
+        return stringUsers;
     }
+
+    public static List<String> getNotAdminUsers() {
+        List<User> users = getService().findAll();
+        List<String> stringUsers = new ArrayList<>();
+        for (User u : users) {
+            if (u.getRole().equals("user") || u.getRole().equals("lead")) {
+                stringUsers.add(
+                        u.getId() + "|"
+                                + u.getUsername() + "|"
+                                + u.getFirstName() + "|"
+                                + u.getLastName() + "|"
+                                + u.getRole() + "|"
+                                + u.getGroup()
+                );
+            }
+        }
+
+        return stringUsers;
+    }
+
+    public static List<String> getLeadUserByGroupName(String group) {
+        List<User> users = getService().findAll();
+        List<String> stringUsers = new ArrayList<>();
+        for (User u : users) {
+            if (u.getGroup().equals(group) & u.getRole().equals("lead")) {
+                stringUsers.add(
+                        u.getId() + "|"
+                                + u.getUsername() + "|"
+                                + u.getFirstName() + "|"
+                                + u.getLastName() + "|"
+                                + u.getRole() + "|"
+                                + u.getGroup()
+                );
+            }
+        }
+
+        return stringUsers;
+    }
+
 
 }
