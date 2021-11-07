@@ -8,9 +8,9 @@ public class Notifier {
 
         
 
-         CommandService.getAll();
+//         CommandService.getAll();
         //CommandService.getByGroup("green");
-        //CommandService.getByRole("admin");
+        CommandService.getByRole("admin");
         //CommandService.getByRoleAndGroup("user", "green");
 
 
