@@ -19,7 +19,7 @@ public class Notifier {
                 " (Name: " + splitter[2] + " " + splitter[3] + ")" +
                 " didnt send the report today!");
 
-        SenderService.send();
+        SenderService.send(336574141l,"Hello deo");
 
 
 
