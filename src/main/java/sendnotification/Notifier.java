@@ -19,9 +19,12 @@ public class Notifier {
         String alex = CommandService.getUserById("430627864");
         System.out.println(CommandService.getUserById("430627864"));
         String [] splitter = getFieldsFromString(alex);
-        System.out.println("User with ID: " + splitter[0] + " (Name: " + splitter[2] + " " + splitter[3] + ")" + " didnt send the report today!");
+        String textmessage = "User with ID: " + splitter[0] + " (Name: " + splitter[2] + " " + splitter[3] + ")" + " didnt send the report today!";
+        System.out.println("User with ID: " + splitter[0] +
+                " (Name: " + splitter[2] + " " + splitter[3] + ")" +
+                " didnt send the report today!");
 
-        Notifier.sendMessage(336574141l,  "lollolol");
+        Notifier.sendMessage(Long.valueOf(splitter[0]),  textmessage);
 
 
 
