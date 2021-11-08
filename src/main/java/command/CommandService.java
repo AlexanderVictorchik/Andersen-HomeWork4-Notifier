@@ -29,14 +29,7 @@ public class CommandService {
     public static List<User> getByGroup(String group) {
         List<User> users = getService().findByGroup(group);
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
-                            + u.getGroup()
-            );
+            System.out.println(u.getGroup());
         }
         return users;
     }
@@ -44,14 +37,7 @@ public class CommandService {
     public static List<User> getByRole(String role) {
         List<User> users = getService().findByRole(role);
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
-                            + u.getGroup()
-            );
+            System.out.println(u.getRole());
         }
         return users;
     }
@@ -59,12 +45,7 @@ public class CommandService {
     public static List<User> getByRoleAndGroup(String role, String group) {
         List<User> users = getService().findByRoleAndGroup(role, group);
         for (User u : users) {
-            System.out.println(
-                    u.getId() + ":"
-                            + u.getUsername() + ":"
-                            + u.getFirstName() + ":"
-                            + u.getLastName() + ":"
-                            + u.getRole() + ":"
+            System.out.println(u.getRole() + ":"
                             + u.getGroup()
             );
         }
