@@ -19,6 +19,12 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.13.0</version>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -39,6 +45,28 @@
                                 <source>${basedir}/target/generated/src/main/java</source>
                             </sources>
                         </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <wsdlUrls>
+                        <url>http://localhost:8087/sendservice?wsdl</url>
+                    </wsdlUrls>
+                    <packageName>sendnotification</packageName>
+                    <keep>true</keep>
+                    <sourceDestDir>${project.build.directory}/generated/src/main/java</sourceDestDir>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>Generate java-code from WSDL</id>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
                     </execution>
                 </executions>
             </plugin>

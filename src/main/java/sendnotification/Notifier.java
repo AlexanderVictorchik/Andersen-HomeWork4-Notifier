@@ -8,10 +8,10 @@ import static command.CommandService.getFieldsFromString;
 
 public class Notifier {
     public static void sendMessage(Long chatID, String text) {
-//        TimeTrackingSenderServiceImpl trackingSenderService =
-//                new TimeTrackingSenderServiceImplService()
-//                        .getPort(com.soapsendservice.TimeTrackingSenderServiceImpl.class);
-//        trackingSenderService.sendMessage(chatID,  text);
+        TimeTrackingSenderServiceImpl trackingSenderService =
+                new TimeTrackingSenderServiceImplService()
+                        .getPort(TimeTrackingSenderServiceImpl.class);
+        trackingSenderService.sendMessage(chatID,  text);
 //        trackingSenderService.sendMessage(430627864l, "Sashok_V", "lol");
     }
     public static void main(String[] args) {
