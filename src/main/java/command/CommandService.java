@@ -53,13 +53,7 @@ public class CommandService {
         List<String> stringUsers = new ArrayList<>();
         for (User u : users) {
             stringUsers.add(
-                    u.getId() + "|"
-                            + u.getUsername() + "|"
-                            + u.getFirstName() + "|"
-                            + u.getLastName() + "|"
-                            + u.getRole() + "|"
-                            + u.getGroup()
-            );
+                    u.getId() + "|");
         }
 
         return stringUsers;
