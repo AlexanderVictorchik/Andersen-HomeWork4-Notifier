@@ -119,5 +119,10 @@ public class CommandService {
         return stringUsers;
     }
 
+    public static String[] getFieldsFromString(String ingoing){
+        String[] result = ingoing.split("|");
+        return result;
+    }
+
 
 }
