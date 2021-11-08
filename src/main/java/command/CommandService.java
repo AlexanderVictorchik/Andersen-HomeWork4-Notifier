@@ -137,7 +137,7 @@ public class CommandService {
 
 
     public static String[] getFieldsFromString(String ingoing){
-        String[] result = ingoing.split("|");
+        String[] result = ingoing.split("\\|");
         return result;
     }
 
