@@ -82,12 +82,7 @@ public class CommandService {
         for (User u : users) {
             if (u.getRole().equals("user") || u.getRole().equals("lead")) {
                 stringUsers.add(
-                        u.getId() + "|"
-                                + u.getUsername() + "|"
-                                + u.getFirstName() + "|"
-                                + u.getLastName() + "|"
-                                + u.getRole() + "|"
-                                + u.getGroup()
+                        String.valueOf(u.getId())
                 );
             }
         }

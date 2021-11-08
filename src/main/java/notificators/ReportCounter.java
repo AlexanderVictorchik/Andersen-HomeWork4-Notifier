@@ -1,6 +1,6 @@
 package notificators;
 
-public class ReportChecker {
+public class ReportCounter {
 
     public boolean isReported() {
 

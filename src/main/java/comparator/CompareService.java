@@ -3,23 +3,20 @@ package comparator;
 import command.CommandService;
 import tracker.TimeTrackerService;
 
-//import java.util.ArrayList;
-//import java.util.List;
-//import java.util.Set;
-//import java.util.TreeSet;
-//
-//public class CompareService {
-//
-//    public static List<String> compare(List<String> listFromCommand, List<String> listFromAccount) {
-//
-//        listFromCommand = CommandService.getAllUsers();
-//        listFromAccount = getTimingReport
-//
-//        List toReturn = new ArrayList(a);
-//        toReturn.removeAll(b);
-//
-//         return toReturn;
-//
-//        return resultList;
-//    }
-//}
+import java.util.*;
+
+public class CompareService {
+
+    public static List<String> compare(List<String> listFromAccount, List<String> listFromCommand) {
+        listFromAccount.retainAll(listFromCommand);
+        listFromCommand.removeAll(listFromAccount);
+        return listFromCommand;
+    }
+
+    public static void main(String[] args) {
+        List<String> listOne = new ArrayList(Arrays.asList("hafil", "iga", "binga", "mike", "dingo"));
+        List<String> listTwo = new ArrayList(Arrays.asList("hafil", "iga", "binga", "mike", "dingo", "neeta.peeta"));
+        compare(listOne, listTwo);
+        System.out.println(compare(listOne, listTwo));
+    }
+}
