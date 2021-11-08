@@ -2,6 +2,7 @@ package command;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class CommandService {
 
@@ -118,6 +119,22 @@ public class CommandService {
 
         return stringUsers;
     }
+
+    public static String getUserById(String userId){
+       User user = getService().findById(userId);
+       String stringUser=user.getId() + "|"
+                + user.getUsername() + "|"
+                + user.getFirstName() + "|"
+                + user.getLastName() + "|"
+                + user.getRole() + "|"
+                + user.getGroup();
+
+
+
+
+        return stringUser;
+    }
+
 
     public static String[] getFieldsFromString(String ingoing){
         String[] result = ingoing.split("|");
