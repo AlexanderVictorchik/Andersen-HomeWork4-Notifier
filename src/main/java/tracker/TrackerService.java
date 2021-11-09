@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class TimeTrackerService {
+public class TrackerService {
 
     public List<Report> getTimingReport() throws IOException {
 
@@ -35,7 +35,7 @@ public class TimeTrackerService {
 
 
     public static void main(String[] args) throws Exception {
-        TimeTrackerService timeTrackerService = new TimeTrackerService();
+        TrackerService trackerService = new TrackerService();
 //        List<Report> rep = timeTrackerService.getTimingReport();
 //        for (int i = 0; i < rep.size(); i++) {
 //            System.out.println(rep.get(i).getUserId());

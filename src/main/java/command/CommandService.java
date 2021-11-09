@@ -13,21 +13,8 @@ public class CommandService {
     }
 
 
-    public static List<String> getAllUsers() {
-        List<User> users = getService().findAll();
-        List<String> stringUsers = new ArrayList<>();
-        for (User u : users) {
-            stringUsers.add(
-                    u.getId() + "|"
-                            + u.getUsername() + "|"
-                            + u.getFirstName() + "|"
-                            + u.getLastName() + "|"
-                            + u.getRole() + "|"
-                            + u.getGroup()
-            );
-        }
-
-        return stringUsers;
+    public static List<User> getAllUsers() {
+        return getService().findAll();
     }
 
 
